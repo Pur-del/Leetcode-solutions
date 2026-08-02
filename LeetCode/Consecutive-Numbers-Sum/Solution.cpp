@@ -1,0 +1,1 @@
+    return counter[n]+1`
