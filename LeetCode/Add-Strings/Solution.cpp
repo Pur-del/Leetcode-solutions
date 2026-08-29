@@ -17,7 +17,7 @@
 17                sum+=num2[p2]-'0';
 18                p2--;
 19            }
-20            ans+=char(sum%10 +'0');
+20            ans+=sum%10 +'0';
 21            carry=sum/10;
 22        }
 23        reverse(ans.begin(),ans.end());
