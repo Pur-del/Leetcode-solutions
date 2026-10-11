@@ -1,25 +1,20 @@
-1class Solution {
-2public:
-3    bool judgeSquareSum(int c) {
-4       
-5        long long low=0;
-6        long long high=sqrt(c);
-7        int ans=0;
-8
-9        while (low <= high) {
-10            long long sum = low*low +high*high;
-11
-12            if (sum == c) {
-13                return true;
-14            }
-15            else if (sum  < c) {
-16            low++;
-17            }
-18            else{
-19                high--;
-20            }
-21        }
-22        
-23        return false;
-24    }
-25};
+  bool judgeSquareSum(int c) {
+    assert(c >= 0);
+    int i = std::floor(std::sqrt(c));
+    if (i * i == c) {
+      return true;
+    } else {
+      int j = 1;
+      while (j <= i) {
+        if (i * i + j * j == c) {
+          return true;
+        } else if (i * i + j * j < c) {
+          j++;
+        } else {
+          i--;
+        }
+      }
+    }
+
+    return false;
+  }
